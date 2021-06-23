@@ -5,6 +5,7 @@ import 'package:plants_vs_zombie/Constant/assets.dart';
 import 'package:plants_vs_zombie/Models/bullet.dart';
 import 'package:plants_vs_zombie/Models/main_handler.dart';
 import 'package:plants_vs_zombie/Models/plant.dart';
+import 'package:plants_vs_zombie/Models/monument.dart';
 import 'package:plants_vs_zombie/Models/zombie.dart';
 import 'package:plants_vs_zombie/Utils/audio_player.dart';
 import 'package:plants_vs_zombie/Utils/math_util.dart';
@@ -22,7 +23,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  PlantHandler _plant = PlantHandler(-0.90, 0.2);
+  MonumentHandler _monument = MonumentHandler(-0.80, 0.0);
+  PlantHandler _plant = PlantHandler(-0.70, 0.2);
   Bullethandler _bullet = Bullethandler(5, 5);
   ZombieHandler _zombie = ZombieHandler(1.1, 1);
   Timer _zombieTimer, _bulletTimer;
@@ -188,7 +190,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  /// Plants , Zombies & bullet will be displayed
+  /// Plants , Monument,Zombies & bullet will be displayed
   Widget _players() {
     return Stack(
       children: [
@@ -206,6 +208,17 @@ class _HomePageState extends State<HomePage> {
           duration: Duration(milliseconds: 0),
           alignment: Alignment(_zombie.x, _zombie.y),
           child: Zombie(),
+        ),
+        Container(
+          width: 100.0,
+          height: 100.0,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(Assets.monumentMock),
+              alignment: Alignment(_monument.x, _monument.y),
+              scale: 0.1,
+            ),
+          ),
         ),
       ],
     );

@@ -4,7 +4,10 @@ class Assets {
   static const plantMock = "assets/images/plant.gif";
   static const zombieMock = "assets/images/zombie.gif";
   static const bulletMock = "assets/images/bullet.png";
-  static const garden = "assets/images/garden.jpg";
+  static const monumentMock =
+      "assets/images/taj-mahal.png"; //change this image to have the monument changed
+  static const garden =
+      "assets/images/garden.jpg"; //change this image to change the image floor
   static const zombieHead = "assets/images/zombie_.png";
   //---
   static const shootSoundEffet = "sounds/bullet.wav";
